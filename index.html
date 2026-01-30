@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+    <title>PC First</title>
+</head>
+
+<body>
+    <div class="telephone">
+        <a href="tel:+33651652325" class="btn-telephone">+33651652325</a>
+    </div>
+    <div class="whatsapp">
+        <a href="https://wa.me/651652325"><svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" width="40px"
+                height="40px" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <style type="text/css">
+                        .st0 {
+                            fill: #FFFFFF;
+                        }
+
+                        .st1 {
+                            fill: #3A559F;
+                        }
+
+                        .st2 {
+                            fill: #F4F4F4;
+                        }
+
+                        .st3 {
+                            fill: #FF0084;
+                        }
+
+                        .st4 {
+                            fill: #0063DB;
+                        }
+
+                        .st5 {
+                            fill: #00ACED;
+                        }
+
+                        .st6 {
+                            fill: #FFEC06;
+                        }
+
+                        .st7 {
+                            fill: #FF0000;
+                        }
+
+                        .st8 {
+                            fill: #25D366;
+                        }
+
+                        .st9 {
+                            fill: #0088FF;
+                        }
+
+                        .st10 {
+                            fill: #314358;
+                        }
+
+                        .st11 {
+                            fill: #EE6996;
+                        }
+
+                        .st12 {
+                            fill: #01AEF3;
+                        }
+
+                        .st13 {
+                            fill: #FFFEFF;
+                        }
+
+                        .st14 {
+                            fill: #F06A35;
+                        }
+
+                        .st15 {
+                            fill: #00ADEF;
+                        }
+
+                        .st16 {
+                            fill: #1769FF;
+                        }
+
+                        .st17 {
+                            fill: #1AB7EA;
+                        }
+
+                        .st18 {
+                            fill: #6001D1;
+                        }
+
+                        .st19 {
+                            fill: #E41214;
+                        }
+
+                        .st20 {
+                            fill: #05CE78;
+                        }
+
+                        .st21 {
+                            fill: #7B519C;
+                        }
+
+                        .st22 {
+                            fill: #FF4500;
+                        }
+
+                        .st23 {
+                            fill: #00F076;
+                        }
+
+                        .st24 {
+                            fill: #FFC900;
+                        }
+
+                        .st25 {
+                            fill: #00D6FF;
+                        }
+
+                        .st26 {
+                            fill: #FF3A44;
+                        }
+
+                        .st27 {
+                            fill: #FF6A36;
+                        }
+
+                        .st28 {
+                            fill: #0061FE;
+                        }
+
+                        .st29 {
+                            fill: #F7981C;
+                        }
+
+                        .st30 {
+                            fill: #EE1B22;
+                        }
+
+                        .st31 {
+                            fill: #EF3561;
+                        }
+
+                        .st32 {
+                            fill: none;
+                            stroke: #FFFFFF;
+                            stroke-width: 2;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st33 {
+                            fill: #0097D3;
+                        }
+
+                        .st34 {
+                            fill: #01308A;
+                        }
+
+                        .st35 {
+                            fill: #019CDE;
+                        }
+
+                        .st36 {
+                            fill: #FFD049;
+                        }
+
+                        .st37 {
+                            fill: #16A05D;
+                        }
+
+                        .st38 {
+                            fill: #4486F4;
+                        }
+
+                        .st39 {
+                            fill: none;
+                        }
+
+                        .st40 {
+                            fill: #34A853;
+                        }
+
+                        .st41 {
+                            fill: #4285F4;
+                        }
+
+                        .st42 {
+                            fill: #FBBC05;
+                        }
+
+                        .st43 {
+                            fill: #EA4335;
+                        }
+                    </style>
+                    <path class="st8"
+                        d="M17,0C8.7,0,2,6.7,2,15c0,3.4,1.1,6.6,3.2,9.2l-2.1,6.4c-0.1,0.4,0,0.8,0.3,1.1C3.5,31.9,3.8,32,4,32 c0.1,0,0.3,0,0.4-0.1l6.9-3.1C13.1,29.6,15,30,17,30c8.3,0,15-6.7,15-15S25.3,0,17,0z">
+                    </path>
+                    <path class="st0"
+                        d="M25.7,20.5c-0.4,1.2-1.9,2.2-3.2,2.4C22.2,23,21.9,23,21.5,23c-0.8,0-2-0.2-4.1-1.1c-2.4-1-4.8-3.1-6.7-5.8 L10.7,16C10.1,15.1,9,13.4,9,11.6c0-2.2,1.1-3.3,1.5-3.8c0.5-0.5,1.2-0.8,2-0.8c0.2,0,0.3,0,0.5,0c0.7,0,1.2,0.2,1.7,1.2l0.4,0.8 c0.3,0.8,0.7,1.7,0.8,1.8c0.3,0.6,0.3,1.1,0,1.6c-0.1,0.3-0.3,0.5-0.5,0.7c-0.1,0.2-0.2,0.3-0.3,0.3c-0.1,0.1-0.1,0.1-0.2,0.2 c0.3,0.5,0.9,1.4,1.7,2.1c1.2,1.1,2.1,1.4,2.6,1.6l0,0c0.2-0.2,0.4-0.6,0.7-0.9l0.1-0.2c0.5-0.7,1.3-0.9,2.1-0.6 c0.4,0.2,2.6,1.2,2.6,1.2l0.2,0.1c0.3,0.2,0.7,0.3,0.9,0.7C26.2,18.5,25.9,19.8,25.7,20.5z">
+                    </path>
+                </g>
+            </svg></a>
+    </div>
+    <div class="bar-info">
+        <div class="container-bar-info">
+            <div class="content-bar-info">
+                <div class="left-bar-info">
+                    <a href="" class="bar-info-number">+33651652325</a>
+                    <a href="" class="bar-info-number">joe.taxi94@gmail.com</a>
+                </div>
+                <div class="right-bar-info">
+                    <a href="" class="reseaux-bar-info"><svg width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.7828 3.91825C20.1313 3.83565 20.3743 3.75444 20.5734 3.66915C20.8524 3.54961 21.0837 3.40641 21.4492 3.16524C21.7563 2.96255 22.1499 2.9449 22.4739 3.11928C22.7979 3.29366 23 3.6319 23 3.99986C23 5.08079 22.8653 5.96673 22.5535 6.7464C22.2911 7.40221 21.9225 7.93487 21.4816 8.41968C21.2954 11.7828 20.3219 14.4239 18.8336 16.4248C17.291 18.4987 15.2386 19.8268 13.0751 20.5706C10.9179 21.3121 8.63863 21.4778 6.5967 21.2267C4.56816 20.9773 2.69304 20.3057 1.38605 19.2892C1.02813 19.0108 0.902313 18.5264 1.07951 18.109C1.25671 17.6916 1.69256 17.4457 2.14144 17.5099C3.42741 17.6936 4.6653 17.4012 5.6832 16.9832C5.48282 16.8742 5.29389 16.7562 5.11828 16.6346C4.19075 15.9925 3.4424 15.1208 3.10557 14.4471C2.96618 14.1684 2.96474 13.8405 3.10168 13.5606C3.17232 13.4161 3.27562 13.293 3.40104 13.1991C2.04677 12.0814 1.49999 10.5355 1.49999 9.49986C1.49999 9.19192 1.64187 8.90115 1.88459 8.71165C1.98665 8.63197 2.10175 8.57392 2.22308 8.53896C2.12174 8.24222 2.0431 7.94241 1.98316 7.65216C1.71739 6.3653 1.74098 4.91284 2.02985 3.75733C2.1287 3.36191 2.45764 3.06606 2.86129 3.00952C3.26493 2.95299 3.6625 3.14709 3.86618 3.50014C4.94369 5.36782 6.93116 6.50943 8.78086 7.18568C9.6505 7.50362 10.4559 7.70622 11.0596 7.83078C11.1899 6.61019 11.5307 5.6036 12.0538 4.80411C12.7439 3.74932 13.7064 3.12525 14.74 2.84698C16.5227 2.36708 18.5008 2.91382 19.7828 3.91825ZM10.7484 9.80845C10.0633 9.67087 9.12171 9.43976 8.09412 9.06408C6.7369 8.56789 5.16088 7.79418 3.84072 6.59571C3.86435 6.81625 3.89789 7.03492 3.94183 7.24766C4.16308 8.31899 4.5742 8.91899 4.94721 9.10549C5.40342 9.3336 5.61484 9.8685 5.43787 10.3469C5.19827 10.9946 4.56809 11.0477 3.99551 10.9046C4.45603 11.595 5.28377 12.2834 6.66439 12.5135C7.14057 12.5929 7.49208 13.0011 7.49986 13.4838C7.50765 13.9665 7.16949 14.3858 6.69611 14.4805L5.82565 14.6546C5.95881 14.7703 6.103 14.8838 6.2567 14.9902C6.95362 15.4727 7.65336 15.6808 8.25746 15.5298C8.70991 15.4167 9.18047 15.6313 9.39163 16.0472C9.60278 16.463 9.49846 16.9696 9.14018 17.2681C8.49626 17.8041 7.74425 18.2342 6.99057 18.5911C6.63675 18.7587 6.24134 18.9241 5.8119 19.0697C6.14218 19.1402 6.48586 19.198 6.84078 19.2417C8.61136 19.4594 10.5821 19.3126 12.4249 18.6792C14.2614 18.0479 15.9589 16.9385 17.2289 15.2312C18.497 13.5262 19.382 11.1667 19.5007 7.96291C19.51 7.71067 19.6144 7.47129 19.7929 7.29281C20.2425 6.84316 20.6141 6.32777 20.7969 5.7143C20.477 5.81403 20.1168 5.90035 19.6878 5.98237C19.3623 6.04459 19.0272 5.94156 18.7929 5.70727C18.0284 4.94274 16.5164 4.43998 15.2599 4.77822C14.6686 4.93741 14.1311 5.28203 13.7274 5.89906C13.3153 6.52904 13 7.51045 13 8.9999C13 9.28288 12.8801 9.5526 12.6701 9.74221C12.1721 10.1917 11.334 9.92603 10.7484 9.80845Z"
+                                    fill="#0F0F0F"></path>
+                            </g>
+                        </svg></a>
+                    <a href="" class="reseaux-bar-info"><svg fill="#000000" height="40px" width="40px" version="1.1"
+                            id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="-143 145 512 512" xml:space="preserve">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g>
+                                    <path
+                                        d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z">
+                                    </path>
+                                    <path
+                                        d="M146.8,313.7c10.3,0,21.3,3.2,21.3,3.2l6.6-39.2c0,0-14-4.8-47.4-4.8c-20.5,0-32.4,7.8-41.1,19.3 c-8.2,10.9-8.5,28.4-8.5,39.7v25.7H51.2v38.3h26.5v133h49.6v-133h39.3l2.9-38.3h-42.2v-29.9C127.3,317.4,136.5,313.7,146.8,313.7z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg></a>
+                    <a href="" class="reseaux-bar-info"><svg width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                                    fill="#000000"></path>
+                            </g>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sous-menu-lateral">
+        <div class="container-lateral">
+            <div class="content-lateral">
+
+            </div>
+        </div>
+    </div>
+    <nav class="topbar">
+        <div class="logo">
+            <img src="./img/car-svgrepo-com.svg" alt="">
+            <h1>monSite</h1>
+        </div>
+        <div class="right">
+            <ul class="ul-topbar">
+                <li class="li-topbar">Accueil</li>
+                <li class="li-topbar">A Propos</li>
+                <li class="li-topbar">Contact</li>
+                <li class="li-topbar">Nous contacter</li>
+            </ul>
+            <div class="burger">
+                <span class="dots"></span>
+                <span class="dots"></span>
+                <span class="dots"></span>
+            </div>
+        </div>
+    </nav>
+    <header class="header">
+        <img src="./img/aeroport.webp" alt="">
+        <div class="titre">
+            <h2>Bienvenue sur monSite</h2>
+            <p>Votre solution taxi sur Vitry sur Seine et ses alentours, avec plus de 5 000 chauffeurs partenaires.
+            </p>
+            <div class="button-header">
+                <a href="" class="btn-header">Appeler</a>
+            </div>
+        </div>
+    </header>
+    <section class="section-choix">
+        <div class="title-choix">
+            <p>Qui sommes-nous ?</p>
+            <h2>Histoire de notre compagnie</h2>
+            <h4>Plus de 10ans dans le transport</h4>
+            <span>Nous sommes une compagnie de taxi opérant sur Vitry sur Seine et ses alentours, collaborant avec plus
+                de 5 000 chauffeurs
+                partenaires, et proposant une large gamme de prestations adaptées aux besoins des particuliers et des
+                professionnels.</span>
+        </div>
+        <div class="container-choix">
+            <div class="content-choix">
+                <div class="choix">
+                    <div class="titre-choix">
+                        <span>01</span>
+                        <h3>sanitaire</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus voluptates tempore
+                        doloremque. Error impedit placeat tenetur facere animi sequi quam sint, eum sapiente, aperiam
+                        dicta
+                        sit alias maxime odit.</p>
+                </div>
+            </div>
+            <div class="content-choix">
+                <div class="choix">
+                    <div class="titre-choix">
+                        <span>02</span>
+                        <h3>privé</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus voluptates tempore
+                        doloremque. Error impedit placeat tenetur facere animi sequi quam sint, eum sapiente, aperiam
+                        dicta
+                        sit alias maxime odit.</p>
+                </div>
+            </div>
+            <div class="content-choix">
+                <div class="choix">
+                    <div class="titre-choix">
+                        <span>03</span>
+                        <h3>gares & aéroports</h3>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam temporibus voluptates tempore
+                        doloremque. Error impedit placeat tenetur facere animi sequi quam sint, eum sapiente, aperiam
+                        dicta
+                        sit alias maxime odit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-services">
+        <div class="container-services">
+            <div class="content-services">
+                <div class="block-right-services">
+                    <h2>Presentation</h2>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellat, laborum culpa amet
+                        aliquam inventore dolore perspiciatis reprehenderit quo animi autem necessitatibus adipisci sit
+                        quibusdam eos. Itaque cumque eos nobis.
+                    </span>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit mollitia reprehenderit aut
+                        cum natus reiciendis incidunt, aliquam, dolore odit fuga maiores, molestias voluptas eius cumque
+                        sapiente laudantium veritatis. Quibusdam, harum.</span>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit mollitia reprehenderit aut
+                        cum natus reiciendis incidunt, aliquam, dolore odit fuga maiores, molestias voluptas eius cumque
+                        sapiente laudantium veritatis. Quibusdam, harum.</span>
+                </div>
+                <div class="block-left-services">
+                    <div class="content-left-services">
+                        <h2>1</h2>
+                        <img src="./img/car-svgrepo-com.svg" alt="">
+                        <div class="button-content-left">
+                            <a href="" class="btn-content-left">Selectionner</a>
+                        </div>
+                    </div>
+                    <div class="content-left-services">
+                        <h2>2</h2>
+                        <p>Valider le formulaire</p>
+                        <div class="button-content-left">
+                            <a href="" class="btn-content-left">Selectionner</a>
+                        </div>
+                    </div>
+                    <div class="content-left-services">
+                        <h2>3</h2>
+                        <p>Nous vous envoyons une confirmation</p>
+                        <div class="button-content-left">
+                            <a href="" class="btn-content-left">Selectionner</a>
+                        </div>
+                    </div>
+                    <div class="content-left-services">
+                        <h2>4</h2>
+                        <p>Le chauffeur est en bas</p>
+                        <div class="button-content-left">
+                            <a href="" class="btn-content-left">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-cars">
+        <div class="container-cars">
+            <div class="block-cars-titre">
+                <p>Nos tarifs</p>
+                <h2>Des prix attractifs pour tout les budget</h2>
+                <h4>Voici quelques exemples</h4>
+                <span>Présentation de nos différentes grilles tarifaires, conçues pour offrir des solutions
+                    transparentes, compétitives et adaptées à chaque type de prestation.</span>
+            </div>
+            <div class="content-cars">
+                <div class="cars">
+                    <div class="top-cars">
+                        <img src="./img/corolla.webp" alt="">
+                        <h2>Conventionné</h2>
+                    </div>
+                    <div class="bottom-cars">
+                        <p>transport vers les hopitaux et autres cabinets medical</p>
+                        <div class="price-cars">
+                            <p>A partir de <span>30€</span></p>
+                        </div>
+                        <div class="button-cars">
+                            <a href="" class="btn-cars">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="top-cars">
+                        <img src="./img/corolla.webp" alt="">
+                        <h2>Aéroports</h2>
+                    </div>
+                    <div class="bottom-cars">
+                        <p>transport vers les hopitaux et autres cabinets medical</p>
+                        <div class="price-cars">
+                            <p>A partir de <span>50€</span></p>
+                        </div>
+                        <div class="button-cars">
+                            <a href="" class="btn-cars">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="top-cars">
+                        <img src="./img/corolla.webp" alt="">
+                        <h2>Gares</h2>
+                    </div>
+                    <div class="bottom-cars">
+                        <p>transport vers les hopitaux et autres cabinets medical</p>
+                        <div class="price-cars">
+                            <p>A partir de <span>70€</span></p>
+                        </div>
+                        <div class="button-cars">
+                            <a href="" class="btn-cars">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cars">
+                    <div class="top-cars">
+                        <img src="./img/corolla.webp" alt="">
+                        <h2>Autres</h2>
+                    </div>
+                    <div class="bottom-cars">
+                        <p>transport vers les hopitaux et autres cabinets medical</p>
+                        <div class="price-cars">
+                            <p>A partir de <span>90€</span></p>
+                        </div>
+                        <div class="button-cars">
+                            <a href="" class="btn-cars">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-formulaire">
+        <div class="container-formulaire">
+            <div class="content-left-formulaire">
+                <form action="" class="form">
+                    <div class="titre-formulaire">
+                        <p>Estimer et réserver une <span>Voiture</span></p>
+                    </div>
+                    <div class="info-personnel">
+                        <span>Information Personnel</span>
+                    </div>
+                    <div class="personnel">
+                        <div class="inputs">
+                            <input type="text" name="name" id="name" required>
+                            <label for="name">Nom</label>
+                        </div>
+                        <div class="inputs">
+                            <input type="text" name="phone" id="phone" required>
+                            <label for="phone">Téléphone</label>
+                        </div>
+                    </div>
+                    <div class="info-personnel">
+                        <span>Information Course</span>
+                    </div>
+                    <div class="destination">
+                        <div class="inputs">
+                            <input type="text" name="depart" id="depart" required>
+                            <label for="depart">Départ</label>
+                            <div class="suggestion-depart"></div>
+                        </div>
+                        <div class="inputs">
+                            <input type="text" name="arrivee" id="arrivee" required>
+                            <label for="arrivee">Arrivée</label>
+                            <div class="suggestion-arrivee"></div>
+                        </div>
+                    </div>
+                    <div class="type-date">
+                        <div class="inputs">
+                            <select name="type" id="type" required>
+                                <option value="" disabled selected></option>
+                                <option value="Conventionné">Conventionné</option>
+                                <option value="Classique">Classique</option>
+                            </select>
+                            <label for="type">Type</label>
+                        </div>
+                        <div class="inputs">
+                            <input type="datetime-local" name="date" id="date" required>
+                        </div>
+                    </div>
+                    <div class="destination">
+                        <div class="inputs">
+                            <input type="number" name="personne" id="personne" required>
+                            <label for="personne">Personne</label>
+                        </div>
+                        <div class="inputs">
+                            <input type="number" name="bagage" id="bagage" required>
+                            <label for="bagage">Bagage</label>
+                        </div>
+                    </div>
+                    <label for="Commentaire" class="label-textarea">Commentaire</label>
+                    <textarea name="" id=""></textarea>
+                    <div id="result"></div>
+                    <div class="button-form">
+                        <button type="submit" class="btn-form">Envoyer</button>
+                        <button type="button" class="btn-estimation">Estimer</button>
+                        <button type="button" class="btn-reinitialiser">Reinitialiser</button>
+                    </div>
+                </form>
+            </div>
+            <div class="content-right-formulaire">
+                <div id="map"></div>
+                <div class="resultat">
+                    <div class="euro">
+                        <img src="./img/euro-svgrepo-com.svg" alt="" class="prix-estimation">
+                        <p class="result-euro"></p>
+                    </div>
+                    <div class="distance">
+                        <img src="./img/itinerary-map-route-svgrepo-com.svg" alt="" class="distance-estimation">
+                        <p class="result-distance"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-apropos">
+        <div class="container-apropos">
+            <div class="content-apropos">
+                <div class="left-content-apropos">
+                    <div class="block-1-apropos">
+                        <img src="./img/aeroport.webp" alt="">
+                        <div class="span-block-1">
+                            <img src="./img/quiet-svgrepo-com.svg" alt="">
+                            <span>20+</span>
+                            <p>Années d'Experience</p>
+                        </div>
+                    </div>
+                    <div class="block-2-apropos">
+                        <img src="./img/taxi-header.webp" alt="">
+                        <div class="span-block-2">
+                            <img src="./img/quiet-svgrepo-com.svg" alt="">
+                            <span>50k+</span>
+                            <p>Distance parcourue</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content-apropos">
+                    <p class="-title-right-apropos">A Propos de nous</p>
+                    <h2>Professionnels de confiance</h2>
+                    <h4>Réseaux de taxi</h4>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus, sequi, sit consectetur
+                        recusandae dicta adipisci quod quam odit debitis incidunt est culpa voluptates illum. Sit
+                        provident quidem laboriosam. Aliquid, labore.</span>
+                    <div class="button-apropos">
+                        <a href="" class="btn-apropos">Voir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-partenaires">
+        <div class="container-partenaires">
+            <div class="titre-partenaires">
+                <span>Ils nous font confiance</span>
+                <p>Partenaires</p>
+            </div>
+            <div class="images-partenaires">
+                <img src="./img/aphp-logo.png" alt="">
+                <img src="./img/cpam.png" alt="">
+                <img src="./img/Détail_Logo_Ville_Vitry-sur-Seine.svg.png" alt="">
+                <img src="./img/Ville_de_Paris_logo.svg.png" alt="">
+                <img src="./img/cpam.webp" alt="">
+                <img src="./img/harmonie.jpg" alt="">
+                <img src="./img/Gustave-Roussy.png" alt="">
+                <img src="./img/Logo_Groupe_ADP.svg.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="section-avis">
+        <div class="container-avis">
+            <div class="content-avis">
+                <div class="info-avis">
+                    <img src="./img/profil.png" alt="">
+                    <span>Name</span>
+                    <span class="works">Works</span>
+                    <img src="./img/etoile.webp" alt="" class="stars">
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore corrupti sapiente impedit officia
+                    excepturi quis officiis illum dolore eligendi, ipsam numquam fugiat vel perspiciatis. Quidem
+                    eligendi omnis iusto magnam quos!</p>
+            </div>
+            <div class="content-avis">
+                <div class="info-avis">
+                    <img src="./img/profil.png" alt="">
+                    <span>Name</span>
+                    <span class="works">Works</span>
+                    <img src="./img/etoile.webp" alt="" class="stars">
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore corrupti sapiente impedit officia
+                    excepturi quis officiis illum dolore eligendi, ipsam numquam fugiat vel perspiciatis. Quidem
+                    eligendi omnis iusto magnam quos!</p>
+            </div>
+            <div class="content-avis">
+                <div class="info-avis">
+                    <img src="./img/profil.png" alt="">
+                    <span>Name</span>
+                    <span class="works">Works</span>
+                    <img src="./img/etoile.webp" alt="" class="stars">
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore corrupti sapiente impedit officia
+                    excepturi quis officiis illum dolore eligendi, ipsam numquam fugiat vel perspiciatis. Quidem
+                    eligendi omnis iusto magnam quos!</p>
+            </div>
+            <div class="content-avis">
+                <div class="info-avis">
+                    <img src="./img/profil.png" alt="">
+                    <span>Name</span>
+                    <span class="works">Works</span>
+                    <img src="./img/etoile.webp" alt="" class="stars">
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore corrupti sapiente impedit officia
+                    excepturi quis officiis illum dolore eligendi, ipsam numquam fugiat vel perspiciatis. Quidem
+                    eligendi omnis iusto magnam quos!</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="content-footer">
+                <div class="logo-footer">
+                    <img src="./img/car-svgrepo-com.svg" alt="">
+                    <h1>monSite</h1>
+                </div>
+                <div class="block-footer">
+                    <div class="left-footer">
+                        <ul class="ul-footer">
+                            <li class="li-footer">Accueil</li>
+                            <li class="li-footer">A Propos</li>
+                            <li class="li-footer">Services</li>
+                            <li class="li-footer">Avis</li>
+                            <li class="li-footer">Contact</li>
+                        </ul>
+                    </div>
+                    <div class="center-footer">
+                        <form action="" class="form-footer">
+                            <div class="titre-form-footer">
+                                <p>Poser une <span>question</span></p>
+                            </div>
+                            <div class="inputs-footer">
+                                <input type="text" name="nom-footer" id="nom-footer">
+                                <label for="nom-footer">Nom</label>
+                            </div>
+                            <div class="inputs-footer">
+                                <input type="email" name="mail-footer" id="mail-footer">
+                                <label for="mail-footer">Email</label>
+                            </div>
+                            <div class="inputs-footer">
+                                <textarea name="commentaire-footer" id="commentaire-footer"></textarea>
+                                <label for="commentaire-footer">Commentaire</label>
+                            </div>
+                            <div class="button-footer">
+                                <a href="" class="btn-footer">Envoyer</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-footer">
+                        <div class="reseaux-footer">
+                            <a href="" class="a-reseaux-footer"><svg width="40px" height="40px" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M19.7828 3.91825C20.1313 3.83565 20.3743 3.75444 20.5734 3.66915C20.8524 3.54961 21.0837 3.40641 21.4492 3.16524C21.7563 2.96255 22.1499 2.9449 22.4739 3.11928C22.7979 3.29366 23 3.6319 23 3.99986C23 5.08079 22.8653 5.96673 22.5535 6.7464C22.2911 7.40221 21.9225 7.93487 21.4816 8.41968C21.2954 11.7828 20.3219 14.4239 18.8336 16.4248C17.291 18.4987 15.2386 19.8268 13.0751 20.5706C10.9179 21.3121 8.63863 21.4778 6.5967 21.2267C4.56816 20.9773 2.69304 20.3057 1.38605 19.2892C1.02813 19.0108 0.902313 18.5264 1.07951 18.109C1.25671 17.6916 1.69256 17.4457 2.14144 17.5099C3.42741 17.6936 4.6653 17.4012 5.6832 16.9832C5.48282 16.8742 5.29389 16.7562 5.11828 16.6346C4.19075 15.9925 3.4424 15.1208 3.10557 14.4471C2.96618 14.1684 2.96474 13.8405 3.10168 13.5606C3.17232 13.4161 3.27562 13.293 3.40104 13.1991C2.04677 12.0814 1.49999 10.5355 1.49999 9.49986C1.49999 9.19192 1.64187 8.90115 1.88459 8.71165C1.98665 8.63197 2.10175 8.57392 2.22308 8.53896C2.12174 8.24222 2.0431 7.94241 1.98316 7.65216C1.71739 6.3653 1.74098 4.91284 2.02985 3.75733C2.1287 3.36191 2.45764 3.06606 2.86129 3.00952C3.26493 2.95299 3.6625 3.14709 3.86618 3.50014C4.94369 5.36782 6.93116 6.50943 8.78086 7.18568C9.6505 7.50362 10.4559 7.70622 11.0596 7.83078C11.1899 6.61019 11.5307 5.6036 12.0538 4.80411C12.7439 3.74932 13.7064 3.12525 14.74 2.84698C16.5227 2.36708 18.5008 2.91382 19.7828 3.91825ZM10.7484 9.80845C10.0633 9.67087 9.12171 9.43976 8.09412 9.06408C6.7369 8.56789 5.16088 7.79418 3.84072 6.59571C3.86435 6.81625 3.89789 7.03492 3.94183 7.24766C4.16308 8.31899 4.5742 8.91899 4.94721 9.10549C5.40342 9.3336 5.61484 9.8685 5.43787 10.3469C5.19827 10.9946 4.56809 11.0477 3.99551 10.9046C4.45603 11.595 5.28377 12.2834 6.66439 12.5135C7.14057 12.5929 7.49208 13.0011 7.49986 13.4838C7.50765 13.9665 7.16949 14.3858 6.69611 14.4805L5.82565 14.6546C5.95881 14.7703 6.103 14.8838 6.2567 14.9902C6.95362 15.4727 7.65336 15.6808 8.25746 15.5298C8.70991 15.4167 9.18047 15.6313 9.39163 16.0472C9.60278 16.463 9.49846 16.9696 9.14018 17.2681C8.49626 17.8041 7.74425 18.2342 6.99057 18.5911C6.63675 18.7587 6.24134 18.9241 5.8119 19.0697C6.14218 19.1402 6.48586 19.198 6.84078 19.2417C8.61136 19.4594 10.5821 19.3126 12.4249 18.6792C14.2614 18.0479 15.9589 16.9385 17.2289 15.2312C18.497 13.5262 19.382 11.1667 19.5007 7.96291C19.51 7.71067 19.6144 7.47129 19.7929 7.29281C20.2425 6.84316 20.6141 6.32777 20.7969 5.7143C20.477 5.81403 20.1168 5.90035 19.6878 5.98237C19.3623 6.04459 19.0272 5.94156 18.7929 5.70727C18.0284 4.94274 16.5164 4.43998 15.2599 4.77822C14.6686 4.93741 14.1311 5.28203 13.7274 5.89906C13.3153 6.52904 13 7.51045 13 8.9999C13 9.28288 12.8801 9.5526 12.6701 9.74221C12.1721 10.1917 11.334 9.92603 10.7484 9.80845Z"
+                                            fill="#f5f5f5"></path>
+                                    </g>
+                                </svg></a>
+                            <a href="" class="a-reseaux-footer"><svg fill="#f5f5f5" height="40px" width="40px"
+                                    version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512"
+                                    xml:space="preserve">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <g>
+                                            <path
+                                                d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z">
+                                            </path>
+                                            <path
+                                                d="M146.8,313.7c10.3,0,21.3,3.2,21.3,3.2l6.6-39.2c0,0-14-4.8-47.4-4.8c-20.5,0-32.4,7.8-41.1,19.3 c-8.2,10.9-8.5,28.4-8.5,39.7v25.7H51.2v38.3h26.5v133h49.6v-133h39.3l2.9-38.3h-42.2v-29.9C127.3,317.4,136.5,313.7,146.8,313.7z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg></a>
+                            <a href="" class="a-reseaux-footer"><svg width="40px" height="40px" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                                            fill="#f5f5f5"></path>
+                                    </g>
+                                </svg></a>
+                        </div>
+                        <div class="info-footer">
+                            <a href="" class="a-info-footer">+33651652325</a>
+                            <a href="" class="a-info-footer">joe.taxi94@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="container-copyright">
+        <div class="content-copyright">
+            <span>all right monSite, 2025</span>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
