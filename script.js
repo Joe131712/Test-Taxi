@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //burger menu lateral
 const burger = document.querySelector(".burger");
 const lateral = document.querySelector(".menu-lateral");
-const dot = ["dots1", "dots2", "dots3"];
+const dot = ["dots4", "dots5", "dots6"];
 const dotsOpen = document.querySelectorAll(".dots");
 const body = document.body;
 burger.addEventListener("click", () => {
@@ -213,3 +213,15 @@ burger.addEventListener("click", () => {
   body.classList.toggle("no-scroll");
   lateral.classList.toggle("menu-lateral1");
 });
+//fin burger menu lateral
+//scroll topbar
+const topbar = document.querySelector(".topbar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 1) {
+    topbar.classList.add("topbar1");
+  } else {
+    topbar.classList.add("topbar");
+    topbar.classList.remove("topbar1");
+  }
+});
+//fin scroll topbar

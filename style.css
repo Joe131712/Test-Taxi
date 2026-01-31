@@ -208,7 +208,7 @@ body {
 
 .burger {
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -658,12 +658,17 @@ body {
 
 .personnel,
 .destination,
-.type-date {
+.type-date,
+.number {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
   width: 70%;
+}
+
+.number {
+  width: 50%;
 }
 
 .info-personnel,
@@ -1325,7 +1330,6 @@ hr {
     height: 50px;
     background-color: var(--secondary);
     padding: 10px;
-    margin-top: 70px;
     overflow: hidden;
   }
 
@@ -1395,7 +1399,7 @@ hr {
     justify-content: flex-end;
     height: 50vh;
     width: 100%;
-    margin: 0 auto;
+    margin: 70px auto 0;
     overflow: hidden;
   }
 
@@ -1481,15 +1485,30 @@ hr {
 
   .topbar {
     position: fixed;
-    top: 0;
+    top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: var(--secondary);
     width: 100%;
     height: 70px;
     padding: 10px;
     z-index: 999999;
+    transition: all 0.5s;
+  }
+
+  .topbar1 {
+    position: fixed;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary);
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    z-index: 999999;
+    transition: all 0.5s;
   }
 
   .right {
@@ -1510,25 +1529,9 @@ hr {
     cursor: pointer;
   }
 
-  .dots1 {
-    top: 25px;
-    rotate: 45deg;
-    transition: all 0.5s;
-  }
-  .dots2 {
-    opacity: 0;
-    transition: all 0.5s;
-  }
-  .dots3 {
-    top: 25px;
-    rotate: -45deg;
-    transition: all 0.5s;
-  }
-
   .dots {
     content: "";
     position: absolute;
-    top: 15px;
     width: 50px;
     height: 3px;
     border-radius: 50px;
@@ -1536,12 +1539,27 @@ hr {
     transition: all 0.5s;
   }
 
-  .dots4 {
+  .dots2 {
     top: 25px;
   }
 
-  .dots5 {
+  .dots3 {
     top: 35px;
+  }
+
+  .dots4 {
+    top: 25px;
+    rotate: 45deg;
+    transition: all 0.5s;
+  }
+  .dots5 {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  .dots6 {
+    top: 25px;
+    rotate: -45deg;
+    transition: all 0.5s;
   }
 
   .ul-topbar {
@@ -2361,7 +2379,7 @@ hr {
   .footer {
     width: 100%;
     background-color: #2e2c2c;
-    padding: 30px 10px;
+    padding: 30px 10px 0;
   }
 
   .logo-footer {
@@ -2476,7 +2494,7 @@ hr {
     flex-direction: column-reverse;
     width: 100%;
     gap: 50px;
-    padding: 30px 10px;
+    padding: 30px 10px 0;
   }
 
   .a-reseaux-footer,
